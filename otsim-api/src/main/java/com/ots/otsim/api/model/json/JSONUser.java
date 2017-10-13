@@ -18,6 +18,10 @@ public class JSONUser implements Serializable {
 	private String applicationName;
 	private String rocketToken;
 	
+	public JSONUser() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public JSONUser(User user) {
 		this.id = user.getId();
 		this.username = user.getUsername();
