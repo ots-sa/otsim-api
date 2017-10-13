@@ -51,7 +51,7 @@
 			<groupId>com.rocketchat.core</groupId>
 			<artifactId>rocketchat-core</artifactId>
 			<version>0.7.1.9</version>
-			<type>pom</type>
+			<type>jar</type>
 		</dependency>
 
 		<dependency>
