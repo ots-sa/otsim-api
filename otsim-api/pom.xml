@@ -51,8 +51,17 @@
 			<groupId>com.rocketchat.core</groupId>
 			<artifactId>rocketchat-core</artifactId>
 			<version>0.7.1.9</version>
-			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
+        
+		<dependency>
+			<groupId>com.rocketchat.common</groupId>
+			<artifactId>rocketchat-common</artifactId>
+			<version>0.7.1.3</version>
+			<scope>compile</scope>
+		</dependency>
+        
+        
 
 		<dependency>
 			<groupId>org.flywaydb</groupId>
