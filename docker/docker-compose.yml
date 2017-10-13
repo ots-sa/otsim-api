@@ -28,7 +28,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-     - /data/mongodb/db:/data/db
+     - ./data/mongodb/db:/data/db
      #- ./data/dump:/dump
     command: mongod --smallfiles --oplogSize 128 --replSet rs0
     labels:
@@ -79,6 +79,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-     - /data/mariadb/db:/var/lib/mysql
+     - ./data/mariadb/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
+
