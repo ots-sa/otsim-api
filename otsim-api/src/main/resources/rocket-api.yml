@@ -1,0 +1,128 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Swagger Petstore (Simple)
+  description: A sample API that uses a petstore as an example to demonstrate features in the swagger-2.0 specification
+  termsOfService: http://helloreverb.com/terms/
+  contact:
+    name: Swagger API team
+    email: foo@example.com
+    url: http://swagger.io
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+host: petstore.swagger.io
+basePath: /api/v1
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /users.create:
+    post:
+      description: Creates a new pet in the store.  Duplicates are allowed
+      operationId: addPet
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: Pet to add to the store
+          required: true
+          schema:
+            $ref: '#/definitions/UserCreateRequest'
+      responses:
+        '200':
+          description: pet response
+          schema:
+            $ref: '#/definitions/UserDTO'
+definitions:
+  UserDTO:
+     type: object
+     properties:
+       user:
+         $ref: "#/definitions/User"  
+       success:
+         type: boolean
+  User:
+    type: object
+    properties:
+      _id:
+        type: string
+      createdAt:
+        type: string
+        format: date-time
+      services:
+        $ref: "#/definitions/ServiceDTO"  
+      username:
+        type: string
+      emails:
+        type: array
+        items:
+          $ref: "#/definitions/EmailDTO"
+      type:
+        type: string
+      status:
+        type: string
+      active:
+        type: boolean
+      roles:
+        type: array
+        items:
+          type: string
+      _updatedAt:
+        type: string
+        format: date-time
+      name:
+        type: string  
+      customFields:
+        type: object
+        additionalProperties:
+          type: string
+  EmailDTO:
+    type: object
+    properties:
+      address:
+        type: string
+      verified:
+        type: boolean
+  ServiceDTO:
+    type: object
+    properties:
+      password:
+        type: object
+        additionalProperties:
+          type: object
+          additionalProperties:
+            type: string
+  UserCreateRequest:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+      active:
+        type: boolean
+        default: true
+      roles:
+        type: array
+        items:
+          type: string
+      joinDefaultChannels:
+        type: boolean
+        default: true
+      requirePasswordChange:
+        type: boolean
+        default: false
+      sendWelcomeEmail:
+        type: boolean
+        default: false
+      customFields:
+        type: object
+        additionalProperties:
+         type: string
