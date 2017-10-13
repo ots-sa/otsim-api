@@ -1,4 +1,4 @@
-package ots.otsim.api;
+package com.ots.otsim.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
